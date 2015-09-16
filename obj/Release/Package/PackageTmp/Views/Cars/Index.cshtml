@@ -1,0 +1,139 @@
+﻿@model IEnumerable<CarList.Models.Car>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<style>
+        tfoot input {
+            width: 100%;
+            padding: 3px;
+            box-sizing: border-box;
+            }
+            
+            
+            tfoot {
+            display: table-header-group;
+            }
+    </style>
+
+<h2>Index</h2>
+<form method="post" action="@Url.Action("Index","Cars")">
+    @Html.DropDownList("year");
+    <button type="submit">Go</button>
+
+    </form>
+<table id="CarTable" class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.make)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.model_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.model_trim)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.model_year)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.body_style)
+            </th>
+           <th>
+                @Html.DisplayNameFor(model => model.engine_cc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.engine_num_cyl)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tfoot>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.make)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.model_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.model_trim)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.model_year)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.body_style)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.engine_cc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.engine_num_cyl)
+            </th>
+            <th></th>
+        </tr>
+    </tfoot>
+    <tbody>
+        @foreach (var item in Model)
+        {
+
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.make)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.model_name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.model_trim)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.model_year)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.body_style)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.engine_cc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.engine_num_cyl)
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "Details", new { id = item.id }) |
+                </td>
+            </tr>
+
+        }
+    </tbody>
+</table>
+
+
+@section scripts {
+<script>
+    $(document).ready(function () {
+        // Setup - add a text input to each footer cell
+        $('#CarTable tfoot th').each(function () {
+            var title = $('#example thead th').eq($(this).index()).text();
+            $(this).html('<input type="text" placeholder="Search ' + title + '" />');
+        });
+
+        // DataTable
+        var table = $('#CarTable').DataTable();
+
+        // Apply the search
+        table.columns().every(function () {
+            var that = this;
+
+            $('input', this.footer()).on('keyup change', function () {
+                that
+                    .search(this.value)
+                    .draw();
+            });
+        });
+    });
+</script>
+    }
