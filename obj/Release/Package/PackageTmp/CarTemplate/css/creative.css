@@ -178,6 +178,7 @@ header {
     min-height: auto;
     text-align: center;
     color: #fff;
+    /*background-image: url(/CarTemplate/css/creative.css);*/
     background-image: url(../img/header.jpg);
     background-position: center;
     -webkit-background-size: cover;

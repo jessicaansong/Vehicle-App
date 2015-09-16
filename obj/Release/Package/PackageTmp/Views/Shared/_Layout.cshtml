@@ -6,20 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
+    
     <title>Jay's Car App</title>
-    <!-- Bootstrap Core CSS -->
-    @Styles.Render("~/Content/css")
-    @Styles.Render("~/bundles/modernizr")
+    
+    <!--======== Bootstrap Core CSS============ -->
+    <link href="/CarTemplate/css/bootstrap.min.css" rel="stylesheet" />
+    
+    <!--========Custom Fonts========-->
     <link ~href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="~/Content/font-awesome/css/font-awesome.min.css" type="text/css">
-    <!-- Plugin CSS -->
-    <link rel="stylesheet" href="~/Content/css/animate.min.css" type="text/css">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="~/Content/creative.css" type="text/css">
+    @*<link rel="stylesheet" href="/Content/font-awesome/css/font-awesome.min.css" type="text/css">*@
+    <link href="/CarTemplate/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+
+
+    <!-- ========Plugin CSS======== -->
+    @*<link rel="stylesheet" href="/Content/css/animate.min.css" type="text/css">*@
+    <link href="/CarTemplate/css/animate.min.css" rel="stylesheet" />
+
+    <!--======== Custom CSS======== -->
+    @*<link rel="stylesheet" href="/Content/creative.css" type="text/css">*@
+    <link href="/CarTemplate/css/creative.css" rel="stylesheet" />
 
     <!--Tab CSS-->
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -45,17 +55,17 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a class="page-scroll" href="@Url.Action("About", "Home")">About</a>
-                    </li>
-                    <li>
                         <a class="page-scroll" href="@Url.Action("Index", "Cars")">Try It</a>
                     </li>
                     <li>
+                        <a class="page-scroll" href="http://jansong.azurewebsites.net">Back</a>
+                    </li>
+                    @*<li>
                         <a class="page-scroll" href="#portfolio">Portfolio</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#contact">Contact</a>
-                    </li>
+                    </li>*@
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -64,46 +74,73 @@
     </nav>
 
 
+
+
+
+
     @RenderBody()
-   
+
 
 
 
 
 
     <!--Template-->
-    <link href="~/Template/animate.min.css" rel="stylesheet" />
-   
-    <link href="~/Template/creative.css" rel="stylesheet" />
+    @*<link href="~/Template/animate.min.css" rel="stylesheet" />*@
+    <link href="/CarTemplate/css/animate.min.css" rel="stylesheet" />
 
-    @Scripts.Render("~/Bundles/jquery")
+    @*<link href="~/Template/creative.css" rel="stylesheet" />*@
+    <link href="/CarTemplate/css/creative.css" rel="stylesheet" />
+
+   @Scripts.Render("~/Bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
-  
-
-
-
-
 
 
     <!-- jQuery -->
-    
-    <!--Data Tables-->
-    
-    <script src="~/Scripts/DataTables/jquery.dataTables.min.js"></script>
+    <script src="/CarTemplate/js/jquery.js"></script>
+    <script src="/CarTemplate/js/jquery.easing.min.js"></script>
+    <script src="/CarTemplate/js/jquery.fittext.js"></script>
     <!-- Bootstrap Core JavaScript -->
-   
+    <script src="/CarTemplate/js/bootstrap.js"></script>
     <!-- Plugin JavaScript -->
-    <script src="js/jquery.easing.min.js"></script>
-    <script src="js/jquery.fittext.js"></script>
-    <script src="js/wow.min.js"></script>
 
+    <script src="/CarTemplate/js/wow.min.js"></script>
+    <script src="/CarTemplate/js/creative.js"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="js/creative.js"></script>
-    
-        <!--Tab Scripts-->
 
 
+
+
+
+
+
+
+                    <!-- jQuery -->
+                                    <script src="/CarTemplate/js/jquery.js"></script>
+                                    <!--Data Tables-->
+                        <script src="~/Scripts/DataTables/dataTables.autoFill.js"></script>
+                        <script src="~/Scripts/DataTables/dataTables.bootstrap.js"></script>
+                        <script src="~/Scripts/DataTables/dataTables.colReorder.js"></script>
+                        <script src="~/Scripts/DataTables/dataTables.colVis.js"></script>
+                        <script src="~/Scripts/DataTables/dataTables.fixedColumns.js"></script>
+                         <script src="~/Scripts/DataTables/dataTables.fixedHeader.js"></script>
+
+
+
+
+                                    <script src="~/Scripts/DataTables/jquery.dataTables.min.js"></script>
+                                    <!-- Bootstrap Core JavaScript -->
+                                    <!-- Plugin JavaScript -->
+                                    <script src="js/jquery.easing.min.js"></script>
+                                    <script src="js/jquery.fittext.js"></script>
+                                    <script src="js/wow.min.js"></script>
+
+
+                                    <!-- Custom Theme JavaScript -->
+                                    <script src="js/creative.js"></script>
+
+    <!--Tab Scripts-->
     @RenderSection("scripts", required: false)
 </body>
 </html>
